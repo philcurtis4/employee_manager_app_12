@@ -15,5 +15,13 @@ INSERT INTO roles (title, salary, department) VALUES
 	('lawyer', 100000, 'legal');
 
 INSERT INTO employees (first_name, last_name, role_id, manager_id) VALUES
-	()
+	('Will', 'Smith', 1, NULL),
+	('Nicole', 'Wilson', 2, 1),
+	('Jason', 'Bates', 3, NULL),
+	('Tom', 'Holland', 4, 3),
+	('Jake', 'Llona', 5, Null),
+	('Jeremy', 'Blake', 6, 5),
+	('David', 'Locke', 7, NULL),
+	
+
 	
