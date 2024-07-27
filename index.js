@@ -1,27 +1,48 @@
 const inquirer = require('inquirer');
-const {Client} = require('pg');
 
-const menu = require('./lib/menu');
+const client = require('./db/connection');
+const MenuSelection = require('./lib/menu');
 
-const client = new Client({
-	user: 'postgres',
-	password: 'pass',
-	database: 'employees_db'
-});
+
+
 
 async function initializeMenu () {
-	const answerObj = await menu();
-
-	//switch statement then after that function in switch call initializeMenu again at bottom
-	console.log(answerObj);
+	const answerObj = await MenuSelection.menu();
+	
+	
+	switch(answerObj.menuChoices){
+		case 'view all departments':
+			await MenuSelection.viewDepartments();
+			MenuSelection.menu();
+			break;
+		case 'view all roles':
+			await MenuSelection.viewRoles();
+			MenuSelection.menu();
+			break;
+		case 'view all employees':
+			await MenuSelection.viewEmployees();
+			MenuSelection.menu();
+			break;
+		case 'add a department':
+			await MenuSelection.showAddDepartmentPrompt();
+			MenuSelection.menu();
+			break;
+		case 'add a role':
+			await MenuSelection.showAddRolePrompt();
+			MenuSelection.menu();
+			break;
+		case 'add an employee':
+			await MenuSelection.showAddEmployeePrompt();
+			MenuSelection.menu();
+	}
 }
 
 async function init () {
 	await client.connect()
 	console.log(`
-		-------------------
-		db connected
-		-------------------
+		--------------------------------
+		Welcome to the Employee Manager
+		--------------------------------
 		`);
 	initializeMenu();
 }
