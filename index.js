@@ -46,6 +46,7 @@ async function initializeMenu () {
 		case 'update an employee role':
 			await MenuSelection.showUpdateEmployeePrompt();
 			initializeMenu();
+			break;
 		case 'Exit':
 			console.log('\nThanks for using the Employee Manager App!\n');
 			process.exit();
