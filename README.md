@@ -10,6 +10,9 @@ The live site may be viewed at the following url.
 https://github.com/philcurtis4/employee_manager_app_12
 Here is a screenshot of the page.
 ![Image of one table and app selection](./lib/images/screenshot.jpg)
+and a walk through video:
+https://drive.google.com/file/d/154OZ3tT_VzmGYzzg23ETbq_u1iEOcr1r/view
+
     
 ## Credits
 The challenge and model of how it should work was given by Rutgers bootcamp. App created by Philip Curtis.
